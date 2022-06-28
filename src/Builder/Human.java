@@ -27,9 +27,7 @@ public class Human {
         return new HumanBuilder();
     }
     private Human() {
-        this.age = age;
-        this.name = name;
-        this.weight = weight;
+
     }
 
     private void setAge(int age) {
