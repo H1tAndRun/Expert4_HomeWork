@@ -45,29 +45,24 @@ public class Human {
     }
 
     static  class HumanBuilder {
-        private  int age;
-        private  String name;
-        private  int weight;
+       private Human human=new Human();
+
 
         public HumanBuilder age(int age) {
-            this.age = age;
+            human.setAge(age);
             return this;
         }
 
         public HumanBuilder name(String name) {
-            this.name = name;
+            human.setName(name);
             return this;
         }
 
         public HumanBuilder weight(int weight) {
-            this.weight = weight;
+            human.setWeight(weight);
             return this;
         }
         public Human build(){
-            Human human=new Human();
-            human.setAge(age);
-            human.setName(name);
-            human.setWeight(weight);
             return human;
         }
     }
