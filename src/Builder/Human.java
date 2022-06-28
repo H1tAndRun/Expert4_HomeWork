@@ -20,18 +20,30 @@ public class Human {
     private  String name;
     private  int weight;
 
-    Human(HumanBuilder builder) {
-        this.age = builder.age;
-        this.name = builder.name;
-        this.weight = builder.weight;
-    }
-
     public void ihfo(){
         System.out.println(name+ " - "+ "возраст "+age +", вес "+weight);
     }
     public static HumanBuilder builder(){
         return new HumanBuilder();
     }
+    private Human() {
+        this.age = age;
+        this.name = name;
+        this.weight = weight;
+    }
+
+    private void setAge(int age) {
+        this.age = age;
+    }
+
+    private void setName(String name) {
+        this.name = name;
+    }
+
+    private void setWeight(int weight) {
+        this.weight = weight;
+    }
+
     static  class HumanBuilder {
         private  int age;
         private  String name;
@@ -52,7 +64,11 @@ public class Human {
             return this;
         }
         public Human build(){
-            return new Human(this);
+            Human human=new Human();
+            human.setAge(age);
+            human.setName(name);
+            human.setWeight(weight);
+            return human;
         }
     }
 
